@@ -3,21 +3,66 @@ import { supabase } from "../lib/supabase";
 import type {
   Episode,
   Media,
+  MediaFormat,
+  MediaReleaseStatus,
   Season,
 } from "../types/media";
 
-export async function getMediaCatalog(): Promise<Media[]> {
+export interface MediaCatalogFilters {
+  search?: string;
+
+  format?: MediaFormat | "all";
+
+  releaseStatus?:
+    | MediaReleaseStatus
+    | "all";
+}
+
+export async function getMediaCatalog(
+  filters: MediaCatalogFilters = {},
+): Promise<Media[]> {
+  let query = supabase
+    .from("media")
+    .select("*");
+
+  const search =
+    filters.search?.trim();
+
+  if (search) {
+    query = query.ilike(
+      "title",
+      `%${search}%`,
+    );
+  }
+
+  if (
+    filters.format &&
+    filters.format !== "all"
+  ) {
+    query = query.eq(
+      "format",
+      filters.format,
+    );
+  }
+
+  if (
+    filters.releaseStatus &&
+    filters.releaseStatus !== "all"
+  ) {
+    query = query.eq(
+      "release_status",
+      filters.releaseStatus,
+    );
+  }
+
   const { data, error } =
-    await supabase
-      .from("media")
-      .select("*")
-      .order(
-        "release_date",
-        {
-          ascending: false,
-          nullsFirst: false,
-        },
-      );
+    await query.order(
+      "release_date",
+      {
+        ascending: false,
+        nullsFirst: false,
+      },
+    );
 
   if (error) {
     throw error;

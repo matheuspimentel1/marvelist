@@ -33,6 +33,12 @@ Marvelist is currently under active development.
 * Season and episode data model
 * Public catalog access
 * Initial Marvel catalog seed
+* Browse catalog page
+* Media search
+* Format filters
+* Release status filters
+* Responsive media grid
+* Loading, empty and error states
 
 ### Planned
 
@@ -99,11 +105,11 @@ Development is being carried out incrementally, with each stage implemented, tes
 
 Current milestone:
 
-**Movie and TV show catalog structure completed.**
+**Browse catalog completed.**
 
 Next milestone:
 
-**Browse page with search, filters and responsive media grid.**
+**Individual movie and TV show pages.**
 
 ## ⚠️ Disclaimer
 
