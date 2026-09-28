@@ -71,3 +71,13 @@ export interface Episode {
   created_at: string;
   updated_at: string;
 }
+
+export interface SeasonWithEpisodes
+  extends Season {
+  episodes: Episode[];
+}
+
+export interface MediaDetails
+  extends Media {
+  seasons: SeasonWithEpisodes[];
+}

@@ -3,9 +3,11 @@ import { supabase } from "../lib/supabase";
 import type {
   Episode,
   Media,
+  MediaDetails,
   MediaFormat,
   MediaReleaseStatus,
   Season,
+  SeasonWithEpisodes,
 } from "../types/media";
 
 export interface MediaCatalogFilters {
@@ -130,4 +132,51 @@ export async function getEpisodesBySeasonId(
   }
 
   return data ?? [];
+}
+
+export async function getMediaDetailsBySlug(
+  slug: string,
+): Promise<MediaDetails | null> {
+  const media =
+    await getMediaBySlug(slug);
+
+  if (!media) {
+    return null;
+  }
+
+  if (media.format === "movie") {
+    return {
+      ...media,
+      seasons: [],
+    };
+  }
+
+  const seasons =
+    await getSeasonsByMediaId(
+      media.id,
+    );
+
+  const seasonsWithEpisodes:
+    SeasonWithEpisodes[] =
+      await Promise.all(
+        seasons.map(
+          async (season) => {
+            const episodes =
+              await getEpisodesBySeasonId(
+                season.id,
+              );
+
+            return {
+              ...season,
+              episodes,
+            };
+          },
+        ),
+      );
+
+  return {
+    ...media,
+    seasons:
+      seasonsWithEpisodes,
+  };
 }

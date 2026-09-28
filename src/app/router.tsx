@@ -11,6 +11,7 @@ import LoginPage from "../pages/LoginPage";
 import SignupPage from "../pages/SignupPage";
 import ProtectedRoute from "../features/auth/ProtectedRoute";
 import ProfileSettingsPage from "../pages/ProfileSettingsPage";
+import MediaPage from "../pages/MediaPage";
 
 function AppRouter() {
   return (
@@ -39,6 +40,11 @@ function AppRouter() {
         <Route
           path="profile/:username"
           element={<ProfilePage />}
+        />
+
+        <Route
+          path="media/:slug"
+          element={<MediaPage />}
         />
 
       <Route element={<ProtectedRoute />}>

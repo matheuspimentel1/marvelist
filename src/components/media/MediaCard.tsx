@@ -1,5 +1,7 @@
 import type { Media } from "../../types/media";
 
+import { Link } from "react-router";
+
 import "./MediaCard.css";
 
 interface MediaCardProps {
@@ -22,43 +24,51 @@ function MediaCard({
       : "TV Show";
 
   return (
-    <article className="media-card">
-      <div className="media-card-poster">
-        {media.poster_url ? (
-          <img
-            src={media.poster_url}
-            alt={`${media.title} poster`}
-            loading="lazy"
-          />
-        ) : (
-          <div className="media-card-placeholder">
-            <span>
-              {media.title
-                .charAt(0)
-                .toUpperCase()}
-            </span>
-          </div>
-        )}
-
-        <span className="media-card-format">
-          {formatLabel}
-        </span>
-      </div>
-
-      <div className="media-card-content">
-        <h2>{media.title}</h2>
-
-        <div className="media-card-meta">
-          {releaseYear && (
-            <span>{releaseYear}</span>
+    <Link
+      to={`/media/${media.slug}`}
+      className="media-card-link"
+      aria-label={`View ${media.title}`}
+    >
+      <article className="media-card">
+        <div className="media-card-poster">
+          {media.poster_url ? (
+            <img
+              src={media.poster_url}
+              alt={`${media.title} poster`}
+              loading="lazy"
+            />
+          ) : (
+            <div className="media-card-placeholder">
+              <span>
+                {media.title
+                  .charAt(0)
+                  .toUpperCase()}
+              </span>
+            </div>
           )}
 
-          <span>
+          <span className="media-card-format">
             {formatLabel}
           </span>
         </div>
-      </div>
-    </article>
+
+        <div className="media-card-content">
+          <h2>{media.title}</h2>
+
+          <div className="media-card-meta">
+            {releaseYear && (
+              <span>
+                {releaseYear}
+              </span>
+            )}
+
+            <span>
+              {formatLabel}
+            </span>
+          </div>
+        </div>
+      </article>
+    </Link>
   );
 }
 

@@ -39,6 +39,11 @@ Marvelist is currently under active development.
 * Release status filters
 * Responsive media grid
 * Loading, empty and error states
+* Individual movie and TV show pages
+* Public media routes
+* Season and episode visualization
+* Responsive media detail layout
+* Media loading, error and not-found states
 
 ### Planned
 
@@ -105,11 +110,11 @@ Development is being carried out incrementally, with each stage implemented, tes
 
 Current milestone:
 
-**Browse catalog completed.**
+**Movie and TV show detail pages completed.**
 
 Next milestone:
 
-**Individual movie and TV show pages.**
+**Personal Watching, Plan to Watch and Completed lists.**
 
 ## ⚠️ Disclaimer
 
