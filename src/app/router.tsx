@@ -9,24 +9,48 @@ import VideoListPage from "../pages/VideoListPage";
 import ProfilePage from "../pages/ProfilePage";
 import LoginPage from "../pages/LoginPage";
 import SignupPage from "../pages/SignupPage";
+import ProtectedRoute from "../features/auth/ProtectedRoute";
 
 function AppRouter() {
   return (
     <Routes>
       <Route element={<MainLayout />}>
-        <Route index element={<LandingPage />} />
+        <Route
+          index
+          element={<LandingPage />}
+        />
 
-        <Route path="home" element={<HomePage />} />
+        <Route
+          path="browse"
+          element={<BrowsePage />}
+        />
 
-        <Route path="browse" element={<BrowsePage />} />
+        <Route
+          path="login"
+          element={<LoginPage />}
+        />
 
-        <Route path="list" element={<VideoListPage />} />
+        <Route
+          path="signup"
+          element={<SignupPage />}
+        />
 
-        <Route path="profile" element={<ProfilePage />} />
+        <Route element={<ProtectedRoute />}>
+          <Route
+            path="home"
+            element={<HomePage />}
+          />
 
-        <Route path="login" element={<LoginPage />} />
+          <Route
+            path="profile"
+            element={<ProfilePage />}
+          />
 
-        <Route path="signup" element={<SignupPage />} />
+          <Route
+            path="list"
+            element={<VideoListPage />}
+          />
+        </Route>
       </Route>
     </Routes>
   );

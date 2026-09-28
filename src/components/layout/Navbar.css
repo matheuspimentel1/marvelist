@@ -221,3 +221,27 @@
     text-align: center;
   }
 }
+
+.logout-button {
+  padding: 9px 16px;
+
+  border-radius: 6px;
+
+  background-color:
+    var(--color-primary);
+
+  color: #ffffff;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease;
+}
+
+.logout-button:hover {
+  background-color:
+    var(--color-primary-hover);
+}

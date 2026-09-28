@@ -1,18 +1,48 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router";
+import { 
+  Link, 
+  NavLink,
+  useNavigate 
+} from "react-router";
+
+import { useAuth } from "../../features/auth/useAuth";
+import { supabase } from "../../lib/supabase";
+import { useTheme } from "../../hooks/useTheme";
 
 import "./Navbar.css";
 
-import { useTheme } from "../../hooks/useTheme";
-
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const navigate = useNavigate();
+
+  const { user } = useAuth();
 
   const { theme, toggleTheme } = useTheme();
 
   function closeMenu() {
     setMenuOpen(false);
   }
+
+  async function handleLogout() {
+  const { error } =
+    await supabase.auth.signOut();
+
+  if (error) {
+    console.error(
+      "Unable to sign out:",
+      error,
+    );
+
+    return;
+  }
+
+  closeMenu();
+
+  navigate("/", {
+    replace: true,
+  });
+}
 
   return (
     <header className="navbar">
@@ -101,21 +131,33 @@ function Navbar() {
               {theme === "light" ? "☾" : "☀"}
             </button>
 
-            <NavLink
-              to="/login"
-              className="signin-link"
-              onClick={closeMenu}
-            >
-              Sign In
-            </NavLink>
+            {user ? (
+              <button
+                type="button"
+                className="logout-button"
+                onClick={handleLogout}
+              >
+                Log Out
+              </button>
+            ) : (
+              <>
+                <NavLink
+                  to="/login"
+                  className="signin-link"
+                  onClick={closeMenu}
+                >
+                  Sign In
+                </NavLink>
 
-            <NavLink
-              to="/signup"
-              className="signup-link"
-              onClick={closeMenu}
-            >
-              Sign Up
-            </NavLink>
+                <NavLink
+                  to="/signup"
+                  className="signup-link"
+                  onClick={closeMenu}
+                >
+                  Sign Up
+                </NavLink>
+              </>
+            )}
           </div>
         </nav>
       </div>

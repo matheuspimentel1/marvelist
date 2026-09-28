@@ -17,6 +17,11 @@ Marvelist is currently under active development.
 * Light and dark themes
 * Theme persistence with localStorage
 * Operating system theme preference detection
+* Email and password authentication
+* Google authentication
+* Persistent user sessions
+* Protected routes
+* Automatic user profile and role creation
 
 ### Planned
 
