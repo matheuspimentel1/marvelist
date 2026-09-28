@@ -22,6 +22,13 @@ Marvelist is currently under active development.
 * Persistent user sessions
 * Protected routes
 * Automatic user profile and role creation
+* Public user profiles
+* Editable usernames and display names
+* User bios
+* Profile pictures
+* Profile cover images
+* Supabase Storage integration
+* Storage access policies
 
 ### Planned
 
@@ -88,11 +95,11 @@ Development is being carried out incrementally, with each stage implemented, tes
 
 Current milestone:
 
-**Frontend foundation and theme system completed.**
+**User profiles and profile media completed.**
 
 Next milestone:
 
-**Supabase integration and initial database architecture.**
+**Marvel movie and TV show catalog.**
 
 ## ⚠️ Disclaimer
 

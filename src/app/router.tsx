@@ -10,6 +10,7 @@ import ProfilePage from "../pages/ProfilePage";
 import LoginPage from "../pages/LoginPage";
 import SignupPage from "../pages/SignupPage";
 import ProtectedRoute from "../features/auth/ProtectedRoute";
+import ProfileSettingsPage from "../pages/ProfileSettingsPage";
 
 function AppRouter() {
   return (
@@ -35,11 +36,16 @@ function AppRouter() {
           element={<SignupPage />}
         />
 
-        <Route element={<ProtectedRoute />}>
-          <Route
-            path="home"
-            element={<HomePage />}
-          />
+        <Route
+          path="profile/:username"
+          element={<ProfilePage />}
+        />
+
+      <Route element={<ProtectedRoute />}>
+        <Route
+          path="home"
+          element={<HomePage />}
+        />
 
           <Route
             path="profile"
@@ -49,6 +55,11 @@ function AppRouter() {
           <Route
             path="list"
             element={<VideoListPage />}
+          />
+
+          <Route
+            path="settings/profile"
+            element={<ProfileSettingsPage />}
           />
         </Route>
       </Route>
