@@ -29,6 +29,10 @@ Marvelist is currently under active development.
 * Profile cover images
 * Supabase Storage integration
 * Storage access policies
+* Movie and TV show catalog database
+* Season and episode data model
+* Public catalog access
+* Initial Marvel catalog seed
 
 ### Planned
 
@@ -95,11 +99,11 @@ Development is being carried out incrementally, with each stage implemented, tes
 
 Current milestone:
 
-**User profiles and profile media completed.**
+**Movie and TV show catalog structure completed.**
 
 Next milestone:
 
-**Marvel movie and TV show catalog.**
+**Browse page with search, filters and responsive media grid.**
 
 ## ⚠️ Disclaimer
 
