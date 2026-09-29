@@ -1,0 +1,95 @@
+.home-page {
+  width: 100%;
+  max-width: 900px;
+
+  margin: 0 auto;
+}
+
+.home-header {
+  margin-bottom: 24px;
+}
+
+.home-header h1 {
+  margin-bottom: 6px;
+}
+
+.home-header p {
+  margin: 0;
+
+  color:
+    var(--color-text-secondary);
+}
+
+.activity-tabs {
+  display: flex;
+
+  gap: 8px;
+
+  margin-bottom: 20px;
+
+  padding: 5px;
+
+  border-radius: 8px;
+
+  background-color:
+    var(--color-surface-secondary);
+}
+
+.activity-tabs button {
+  flex: 1;
+
+  min-height: 42px;
+
+  border-radius: 6px;
+
+  background: transparent;
+
+  color:
+    var(--color-text-secondary);
+
+  cursor: pointer;
+
+  font-weight: 600;
+}
+
+.activity-tabs button.active {
+  background-color:
+    var(--color-surface);
+
+  color:
+    var(--color-primary);
+}
+
+.activity-feed {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.home-state {
+  min-height: 280px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 32px;
+
+  border: 1px dashed
+    var(--color-border);
+
+  border-radius: 10px;
+
+  text-align: center;
+
+  color:
+    var(--color-text-secondary);
+}
+
+.home-state h2 {
+  color:
+    var(--color-text-primary);
+}

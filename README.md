@@ -77,10 +77,14 @@ Marvelist is currently under active development.
 * Public follower counts
 * Public following counts
 * User-isolated follow management with RLS
+* Global activity feed
+* Following activity feed
+* Automatic media status activity logging
+* Recent activity on public profiles
+* Relative activity timestamps
 
 ### Planned
 
-* Global and following activity feeds
 * Moderator and administrator roles
 * Content moderation tools
 * Release notifications
@@ -134,11 +138,11 @@ Development is being carried out incrementally, with each stage implemented, tes
 
 Current milestone:
 
-**User follow system completed.**
+**Global and following activity feeds completed.**
 
 Next milestone:
 
-**Global and Following activity feeds.**
+**User roles and authorization for users, moderators and administrators.**
 
 ## ⚠️ Disclaimer
 

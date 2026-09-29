@@ -26,6 +26,9 @@ import ProfileStatistics
 import ProfileSocial
   from "../components/profile/ProfileSocial";
 
+import ProfileActivity
+  from "../components/profile/ProfileActivity";
+
 import "../styles/profile.css";
 
 function ProfilePage() {
@@ -164,14 +167,9 @@ function ProfilePage() {
             userId={profile.id}
           />
 
-          <section className="profile-section">
-            <h2>Activity</h2>
-
-            <p>
-              Recent activity will
-              appear here.
-            </p>
-          </section>
+          <ProfileActivity
+            userId={profile.id}
+          />
         </div>
       </div>
     </section>
