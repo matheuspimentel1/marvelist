@@ -66,6 +66,12 @@ Marvelist is currently under active development.
 * Favorite Marvel characters
 * Public profile favorite panels
 * User-isolated favorite management with RLS
+* Public profile statistics
+* Completed movie tracking
+* Completed TV show tracking
+* Watched episode statistics
+* Watch-time calculation
+* Privacy-preserving aggregate statistics
 
 ### Planned
 
@@ -124,11 +130,11 @@ Development is being carried out incrementally, with each stage implemented, tes
 
 Current milestone:
 
-**Media and character favorites completed.**
+**Profile statistics and watch-time analytics completed.**
 
 Next milestone:
 
-**Profile statistics and watch-time analytics.**
+**User follow system and social relationships.**
 
 ## ⚠️ Disclaimer
 

@@ -20,6 +20,9 @@ import type { Profile } from "../types/profile";
 import ProfileFavorites
   from "../components/profile/ProfileFavorites";
 
+import ProfileStatistics
+  from "../components/profile/ProfileStatistics";
+
 import "../styles/profile.css";
 
 function ProfilePage() {
@@ -149,15 +152,9 @@ function ProfilePage() {
         </aside>
 
         <div className="profile-main">
-          <section className="profile-section">
-            <h2>Statistics</h2>
-
-            <p>
-              Profile statistics will
-              be available in a future
-              update.
-            </p>
-          </section>
+          <ProfileStatistics
+            userId={profile.id}
+          />
 
           <section className="profile-section">
             <h2>Activity</h2>
