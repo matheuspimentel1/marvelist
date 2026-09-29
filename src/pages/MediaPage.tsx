@@ -17,6 +17,9 @@ import type {
   MediaReleaseStatus,
 } from "../types/media";
 
+import MediaListControl
+  from "../components/media/MediaListControl";
+
 import "../styles/media-page.css";
 
 const releaseStatusLabels:
@@ -279,6 +282,10 @@ function MediaPage() {
                   </span>
                 )}
             </div>
+
+            <MediaListControl
+              mediaId={media.id}
+            />
           </div>
         </div>
       </section>

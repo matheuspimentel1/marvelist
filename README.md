@@ -44,13 +44,16 @@ Marvelist is currently under active development.
 * Season and episode visualization
 * Responsive media detail layout
 * Media loading, error and not-found states
+* Personal video lists
+* Plan to Watch status
+* Watching status
+* Completed status
+* List status management
+* Personal list filters
+* User-isolated list data with RLS
 
 ### Planned
 
-* User authentication
-* User profiles
-* Marvel movie and TV show catalog
-* Watching, Plan to Watch, and Completed lists
 * Episode and season progress tracking
 * Favorite movies, TV shows, and characters
 * Character pages
@@ -110,11 +113,11 @@ Development is being carried out incrementally, with each stage implemented, tes
 
 Current milestone:
 
-**Movie and TV show detail pages completed.**
+**Personal video lists completed.**
 
 Next milestone:
 
-**Personal Watching, Plan to Watch and Completed lists.**
+**Movie, season and episode progress tracking.**
 
 ## ⚠️ Disclaimer
 
