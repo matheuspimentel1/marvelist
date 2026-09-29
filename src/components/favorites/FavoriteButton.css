@@ -1,0 +1,62 @@
+.favorite-control {
+  display: inline-flex;
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.favorite-button,
+.favorite-login {
+  min-height: 42px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 14px;
+
+  border: 1px solid
+    var(--color-border);
+
+  border-radius: 6px;
+
+  background-color:
+    var(--color-surface);
+
+  color:
+    var(--color-text-primary);
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+.favorite-button:hover,
+.favorite-login:hover {
+  border-color:
+    var(--color-primary);
+}
+
+.favorite-button-active {
+  border-color:
+    var(--color-primary);
+
+  color:
+    var(--color-primary);
+}
+
+.favorite-button:disabled {
+  cursor: not-allowed;
+
+  opacity: 0.6;
+}
+
+.favorite-error {
+  margin: 0;
+
+  color: #ef4444;
+
+  font-size: 0.8rem;
+}

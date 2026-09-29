@@ -62,10 +62,13 @@ Marvelist is currently under active development.
 * Character-to-media relationships
 * Character relationships
 * Character appearances on media pages
+* Favorite movies and TV shows
+* Favorite Marvel characters
+* Public profile favorite panels
+* User-isolated favorite management with RLS
 
 ### Planned
 
-* Favorite movies, TV shows, and characters
 * Global and following activity feeds
 * Follow system
 * Moderator and administrator roles
@@ -83,7 +86,6 @@ Marvelist is currently under active development.
 * React Router
 * CSS
 * Supabase
-
   * PostgreSQL
   * Authentication
   * Storage
@@ -122,11 +124,11 @@ Development is being carried out incrementally, with each stage implemented, tes
 
 Current milestone:
 
-**Marvel character pages and relationships completed.**
+**Media and character favorites completed.**
 
 Next milestone:
 
-**Favorite movies, TV shows and characters.**
+**Profile statistics and watch-time analytics.**
 
 ## ⚠️ Disclaimer
 

@@ -17,6 +17,9 @@ import {
 
 import type { Profile } from "../types/profile";
 
+import ProfileFavorites
+  from "../components/profile/ProfileFavorites";
+
 import "../styles/profile.css";
 
 function ProfilePage() {
@@ -139,6 +142,10 @@ function ProfilePage() {
               Edit Profile
             </Link>
           )}
+
+          <ProfileFavorites
+            userId={profile.id}
+          />
         </aside>
 
         <div className="profile-main">
@@ -149,16 +156,6 @@ function ProfilePage() {
               Profile statistics will
               be available in a future
               update.
-            </p>
-          </section>
-
-          <section className="profile-section">
-            <h2>Favorites</h2>
-
-            <p>
-              Favorite media and
-              characters will appear
-              here.
             </p>
           </section>
 

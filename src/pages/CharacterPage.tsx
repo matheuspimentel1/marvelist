@@ -19,6 +19,9 @@ import type {
   CharacterDetails,
 } from "../types/character";
 
+import FavoriteButton
+  from "../components/favorites/FavoriteButton";
+
 import "../styles/character-page.css";
 
 function formatRelation(
@@ -153,6 +156,11 @@ function CharacterPage() {
               )}
             </p>
           )}
+
+          <FavoriteButton
+            type="character"
+            entityId={character.id}
+          />
         </div>
       </section>
 

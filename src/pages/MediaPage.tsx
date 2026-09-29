@@ -26,6 +26,9 @@ import EpisodeTracker
 import MediaCharacters
   from "../components/characters/MediaCharacters";
 
+import FavoriteButton
+  from "../components/favorites/FavoriteButton";
+
 import "../styles/media-page.css";
 
 const releaseStatusLabels:
@@ -289,9 +292,16 @@ function MediaPage() {
                 )}
             </div>
 
-            <MediaListControl
-              mediaId={media.id}
-            />
+            <div>
+              <MediaListControl
+                mediaId={media.id}
+              />
+              
+              <FavoriteButton
+                type="media"
+                entityId={media.id}
+              />
+            </div>
           </div>
         </div>
       </section>

@@ -427,3 +427,19 @@
     padding: 18px;
   }
 }
+
+.media-page-actions {
+  display: flex;
+  flex-wrap: wrap;
+
+  align-items: flex-end;
+
+  gap: 12px;
+
+  margin-top: 18px;
+}
+
+.media-page-actions
+.media-list-control {
+  margin-top: 0;
+}
