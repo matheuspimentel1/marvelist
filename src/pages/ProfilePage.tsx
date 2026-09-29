@@ -23,6 +23,9 @@ import ProfileFavorites
 import ProfileStatistics
   from "../components/profile/ProfileStatistics";
 
+import ProfileSocial
+  from "../components/profile/ProfileSocial";
+
 import "../styles/profile.css";
 
 function ProfilePage() {
@@ -136,6 +139,11 @@ function ProfilePage() {
               {profile.bio}
             </p>
           )}
+
+          <ProfileSocial
+            userId={profile.id}
+            isOwner={isOwner}
+          />
 
           {isOwner && (
             <Link

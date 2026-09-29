@@ -1,0 +1,32 @@
+.profile-social {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 14px;
+
+  margin-top: 18px;
+}
+
+.profile-social-counts {
+  display: flex;
+
+  gap: 20px;
+}
+
+.profile-social-counts > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-social-counts strong {
+  font-size: 1.1rem;
+}
+
+.profile-social-counts span {
+  color:
+    var(--color-text-secondary);
+
+  font-size: 0.8rem;
+}

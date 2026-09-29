@@ -72,11 +72,15 @@ Marvelist is currently under active development.
 * Watched episode statistics
 * Watch-time calculation
 * Privacy-preserving aggregate statistics
+* User follow system
+* Follow and unfollow controls
+* Public follower counts
+* Public following counts
+* User-isolated follow management with RLS
 
 ### Planned
 
 * Global and following activity feeds
-* Follow system
 * Moderator and administrator roles
 * Content moderation tools
 * Release notifications
@@ -130,11 +134,11 @@ Development is being carried out incrementally, with each stage implemented, tes
 
 Current milestone:
 
-**Profile statistics and watch-time analytics completed.**
+**User follow system completed.**
 
 Next milestone:
 
-**User follow system and social relationships.**
+**Global and Following activity feeds.**
 
 ## ⚠️ Disclaimer
 
