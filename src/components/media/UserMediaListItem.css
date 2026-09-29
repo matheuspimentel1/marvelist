@@ -1,0 +1,167 @@
+.user-media-item {
+  display: grid;
+
+  grid-template-columns:
+    72px
+    minmax(0, 1fr)
+    auto;
+
+  gap: 16px;
+
+  align-items: center;
+
+  padding: 14px;
+
+  border: 1px solid
+    var(--color-border);
+
+  border-radius: 10px;
+
+  background-color:
+    var(--color-surface);
+}
+
+.user-media-poster {
+  width: 72px;
+
+  aspect-ratio: 2 / 3;
+
+  overflow: hidden;
+
+  border-radius: 6px;
+
+  text-decoration: none;
+
+  background-color:
+    var(--color-surface-secondary);
+}
+
+.user-media-poster img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.user-media-poster-placeholder {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--color-primary),
+      var(--color-surface-secondary)
+    );
+
+  color: #ffffff;
+
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.user-media-title {
+  color:
+    var(--color-text-primary);
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+.user-media-title:hover {
+  color:
+    var(--color-primary);
+}
+
+.user-media-meta {
+  display: flex;
+
+  gap: 8px;
+
+  margin-top: 6px;
+
+  color:
+    var(--color-text-secondary);
+
+  font-size: 0.85rem;
+}
+
+.user-media-meta span + span::before {
+  content: "•";
+
+  margin-right: 8px;
+}
+
+.user-media-actions {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+
+  min-width: 160px;
+}
+
+.user-media-actions select,
+.user-media-actions button {
+  height: 38px;
+
+  padding: 0 10px;
+
+  border-radius: 6px;
+}
+
+.user-media-actions select {
+  border: 1px solid
+    var(--color-border);
+
+  background-color:
+    var(--color-background);
+
+  color:
+    var(--color-text-primary);
+}
+
+.user-media-actions button {
+  background-color:
+    var(--color-surface-secondary);
+
+  color:
+    var(--color-text-primary);
+
+  cursor: pointer;
+}
+
+.user-media-error {
+  margin-bottom: 0;
+
+  color: #ef4444;
+
+  font-size: 0.8rem;
+}
+
+@media (max-width: 600px) {
+  .user-media-item {
+    grid-template-columns:
+      64px minmax(0, 1fr);
+  }
+
+  .user-media-poster {
+    width: 64px;
+  }
+
+  .user-media-actions {
+    grid-column: 1 / -1;
+
+    display: grid;
+
+    grid-template-columns:
+      1fr 1fr;
+  }
+}
