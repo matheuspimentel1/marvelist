@@ -20,6 +20,9 @@ import type {
 import MediaListControl
   from "../components/media/MediaListControl";
 
+import EpisodeTracker
+  from "../components/media/EpisodeTracker";
+
 import "../styles/media-page.css";
 
 const releaseStatusLabels:
@@ -301,127 +304,19 @@ function MediaPage() {
             </p>
           </section>
 
-          {media.format ===
-            "tv" && (
+          {media.format === "tv" && (
             <section className="media-section">
               <h2>Episodes</h2>
 
-              {media.seasons
-                .length === 0 ? (
+              {media.seasons.length === 0 ? (
                 <p className="media-muted">
-                  Season information
-                  is not available yet.
+                  Season information is
+                  not available yet.
                 </p>
               ) : (
-                <div className="season-list">
-                  {media.seasons.map(
-                    (season) => (
-                      <section
-                        key={
-                          season.id
-                        }
-                        className="season-card"
-                      >
-                        <div className="season-header">
-                          <div>
-                            <h3>
-                              {season.title ||
-                                `Season ${season.season_number}`}
-                            </h3>
-
-                            <span>
-                              {
-                                season
-                                  .episodes
-                                  .length
-                              }{" "}
-                              {season
-                                .episodes
-                                .length ===
-                              1
-                                ? "episode"
-                                : "episodes"}
-                            </span>
-                          </div>
-                        </div>
-
-                        {season
-                          .description && (
-                          <p>
-                            {
-                              season.description
-                            }
-                          </p>
-                        )}
-
-                        {season
-                          .episodes
-                          .length ===
-                        0 ? (
-                          <p className="media-muted">
-                            No episodes
-                            available.
-                          </p>
-                        ) : (
-                          <div className="episode-list">
-                            {season.episodes.map(
-                              (
-                                episode,
-                              ) => (
-                                <article
-                                  key={
-                                    episode.id
-                                  }
-                                  className="episode-card"
-                                >
-                                  <div className="episode-number">
-                                    {
-                                      episode.episode_number
-                                    }
-                                  </div>
-
-                                  <div className="episode-info">
-                                    <h4>
-                                      {
-                                        episode.title
-                                      }
-                                    </h4>
-
-                                    <div className="episode-meta">
-                                      {episode.release_date && (
-                                        <span>
-                                          {formatDate(
-                                            episode.release_date,
-                                          )}
-                                        </span>
-                                      )}
-
-                                      {episode.runtime_minutes && (
-                                        <span>
-                                          {formatRuntime(
-                                            episode.runtime_minutes,
-                                          )}
-                                        </span>
-                                      )}
-                                    </div>
-
-                                    {episode.description && (
-                                      <p>
-                                        {
-                                          episode.description
-                                        }
-                                      </p>
-                                    )}
-                                  </div>
-                                </article>
-                              ),
-                            )}
-                          </div>
-                        )}
-                      </section>
-                    ),
-                  )}
-                </div>
+                <EpisodeTracker
+                  media={media}
+                />
               )}
             </section>
           )}

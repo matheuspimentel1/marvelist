@@ -51,10 +51,15 @@ Marvelist is currently under active development.
 * List status management
 * Personal list filters
 * User-isolated list data with RLS
+* Movie progress tracking
+* Episode-level TV show progress
+* Season progress support
+* Automatic Watching status from episode activity
+* Automatic Completed status when all episodes are watched
+* User-isolated episode progress with RLS
 
 ### Planned
 
-* Episode and season progress tracking
 * Favorite movies, TV shows, and characters
 * Character pages
 * Global and following activity feeds
@@ -73,15 +78,15 @@ Marvelist is currently under active development.
 * Vite
 * React Router
 * CSS
-
-### Planned
-
 * Supabase
 
   * PostgreSQL
   * Authentication
   * Storage
   * Row Level Security
+
+### Planned
+
 * TMDB API
 * Vercel
 
@@ -113,11 +118,11 @@ Development is being carried out incrementally, with each stage implemented, tes
 
 Current milestone:
 
-**Personal video lists completed.**
+**Movie and episode progress tracking completed.**
 
 Next milestone:
 
-**Movie, season and episode progress tracking.**
+**Marvel character catalog and character pages.**
 
 ## ⚠️ Disclaimer
 

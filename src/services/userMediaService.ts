@@ -47,6 +47,15 @@ export async function setUserMediaStatus(
   let completedAt =
     existing?.completed_at ?? null;
 
+  if (
+    status === "plan_to_watch"
+  ) {
+    await clearEpisodeProgressForMedia(
+      userId,
+      mediaId,
+    );
+  }
+
   if (status === "plan_to_watch") {
     startedAt = null;
     completedAt = null;
@@ -98,10 +107,84 @@ export async function setUserMediaStatus(
   return data;
 }
 
+async function clearEpisodeProgressForMedia(
+  userId: string,
+  mediaId: string,
+) {
+  const {
+    data: seasons,
+    error: seasonsError,
+  } = await supabase
+    .from("seasons")
+    .select("id")
+    .eq("media_id", mediaId);
+
+  if (seasonsError) {
+    throw seasonsError;
+  }
+
+  if (
+    !seasons ||
+    seasons.length === 0
+  ) {
+    return;
+  }
+
+  const seasonIds =
+    seasons.map(
+      (season) => season.id,
+    );
+
+  const {
+    data: episodes,
+    error: episodesError,
+  } = await supabase
+    .from("episodes")
+    .select("id")
+    .in("season_id", seasonIds);
+
+  if (episodesError) {
+    throw episodesError;
+  }
+
+  const episodeIds =
+    episodes?.map(
+      (episode) =>
+        episode.id,
+    ) ?? [];
+
+  if (
+    episodeIds.length === 0
+  ) {
+    return;
+  }
+
+  const { error } =
+    await supabase
+      .from(
+        "user_episode_progress",
+      )
+      .delete()
+      .eq("user_id", userId)
+      .in(
+        "episode_id",
+        episodeIds,
+      );
+
+  if (error) {
+    throw error;
+  }
+}
+
 export async function removeUserMedia(
   userId: string,
   mediaId: string,
 ) {
+  await clearEpisodeProgressForMedia(
+    userId,
+    mediaId,
+  );
+
   const { error } =
     await supabase
       .from("user_media")

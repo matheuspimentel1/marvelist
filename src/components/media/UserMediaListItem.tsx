@@ -15,6 +15,9 @@ import type {
   UserMediaWithMedia,
 } from "../../types/userMedia";
 
+import MediaProgress
+  from "./MediaProgress";
+
 import "./UserMediaListItem.css";
 
 interface UserMediaListItemProps {
@@ -158,6 +161,14 @@ function UserMediaListItem({
               {releaseYear}
             </span>
           )}
+        </div>
+
+        <div className="user-media-progress">
+          <MediaProgress
+            userId={userId}
+            media={item.media}
+            status={item.status}
+          />
         </div>
 
         {error && (

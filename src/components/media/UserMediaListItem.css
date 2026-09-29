@@ -165,3 +165,9 @@
       1fr 1fr;
   }
 }
+
+.user-media-progress {
+  max-width: 280px;
+
+  margin-top: 12px;
+}
