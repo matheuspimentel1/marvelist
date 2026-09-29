@@ -57,11 +57,15 @@ Marvelist is currently under active development.
 * Automatic Watching status from episode activity
 * Automatic Completed status when all episodes are watched
 * User-isolated episode progress with RLS
+* Marvel character catalog
+* Public character pages
+* Character-to-media relationships
+* Character relationships
+* Character appearances on media pages
 
 ### Planned
 
 * Favorite movies, TV shows, and characters
-* Character pages
 * Global and following activity feeds
 * Follow system
 * Moderator and administrator roles
@@ -118,11 +122,11 @@ Development is being carried out incrementally, with each stage implemented, tes
 
 Current milestone:
 
-**Movie and episode progress tracking completed.**
+**Marvel character pages and relationships completed.**
 
 Next milestone:
 
-**Marvel character catalog and character pages.**
+**Favorite movies, TV shows and characters.**
 
 ## ⚠️ Disclaimer
 

@@ -23,6 +23,9 @@ import MediaListControl
 import EpisodeTracker
   from "../components/media/EpisodeTracker";
 
+import MediaCharacters
+  from "../components/characters/MediaCharacters";
+
 import "../styles/media-page.css";
 
 const releaseStatusLabels:
@@ -324,11 +327,9 @@ function MediaPage() {
           <section className="media-section">
             <h2>Characters</h2>
 
-            <p className="media-muted">
-              Character information
-              will be added in a
-              future update.
-            </p>
+            <MediaCharacters
+              mediaId={media.id}
+            />
           </section>
 
           <section className="media-section">
